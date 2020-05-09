@@ -1,10 +1,5 @@
 'use strict';
 
-<<<<<<< HEAD
-=======
-
-
->>>>>>> b52acdd4d9790bd512f0a14719d26f1a4f0bdab3
 const cartButton = document.querySelector("#cart-button");
 const modal = document.querySelector(".modal");
 const close = document.querySelector(".close");
@@ -21,7 +16,6 @@ const restaurants = document.querySelector('.restaurants');
 const menu = document.querySelector('.menu');
 const logo = document.querySelector('.logo');
 const cardsMenu = document.querySelector('.cards-menu');
-<<<<<<< HEAD
 const restaurantTitle = document.querySelector('.restaurant-title');
 const rating = document.querySelector('.rating');
 const minPrice = document.querySelector('.price');
@@ -64,11 +58,6 @@ const getData = async function(url){
 console.log(getData('./db/partners.json'));
 
  
-=======
-
-let login = localStorage.getItem('gloDelivery');
-
->>>>>>> b52acdd4d9790bd512f0a14719d26f1a4f0bdab3
 const valid = function(str){
   const nameReg = /^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$/;
   return nameReg.test(str);
@@ -92,18 +81,12 @@ function authorized() {
 
   function logOut() {
     login = null;
-<<<<<<< HEAD
     cart.length = 0;
-=======
->>>>>>> b52acdd4d9790bd512f0a14719d26f1a4f0bdab3
     localStorage.removeItem('gloDelivery');
     buttonAuth.style.display = '';
     userName.style.display = '';
     buttonOut.style.display = '';
-<<<<<<< HEAD
     cartButton.style.display = '';
-=======
->>>>>>> b52acdd4d9790bd512f0a14719d26f1a4f0bdab3
     buttonOut.removeEventListener('click', logOut);
     checkAuth();
     returnMain();
@@ -112,22 +95,12 @@ function authorized() {
   console.log('Авторизован');
 
   userName.textContent = login;
-<<<<<<< HEAD
   buttonAuth.style.display = 'none';
   userName.style.display = 'inline';
   buttonOut.style.display = 'flex';
   cartButton.style.display = 'flex';
   buttonOut.addEventListener('click', logOut);
   loadCart();
-=======
-  console.log('login: ', login);
-
-  buttonAuth.style.display = 'none';
-  userName.style.display = 'inline';
-  buttonOut.style.display = 'block';
-
-  buttonOut.addEventListener('click', logOut)
->>>>>>> b52acdd4d9790bd512f0a14719d26f1a4f0bdab3
   
  
 }
@@ -168,14 +141,10 @@ function checkAuth() {
   }
 }
 
-<<<<<<< HEAD
 function createCardRestaurant({ image, kitchen, name, price, products, stars, time_of_delivery:timeOfDelivery}) {
   // console.log(CardRestaurant);
 
 
-=======
-function createCardRestaurant() {
->>>>>>> b52acdd4d9790bd512f0a14719d26f1a4f0bdab3
   const card = `
      <a class="card card-restaurant" 
             data-products="${products}"
@@ -202,14 +171,10 @@ function createCardRestaurant() {
 
 }
 
-<<<<<<< HEAD
 function createCardGood({ description, image, name, price, id }){
   // console.log('description: ', description);
  
 
-=======
-function createCardGood(){
->>>>>>> b52acdd4d9790bd512f0a14719d26f1a4f0bdab3
   const card = document.createElement('div');
   card.className = 'card';
   // card.id = id;
@@ -249,7 +214,6 @@ function openGoods(event){
 
   if(restaurant){
 
-<<<<<<< HEAD
     if(login){    
       cardsMenu.textContent = '';
       containerPromo.classList.add('hide');
@@ -267,24 +231,10 @@ function openGoods(event){
       data.forEach(createCardGood)
       });
     
-=======
-    if(login){
-
-    
-    cardsMenu.textContent = '';
-    containerPromo.classList.add('hide');
-    restaurants.classList.add('hide');
-    menu.classList.remove('hide');
-
-    createCardGood();
-    createCardGood();
-    createCardGood();
->>>>>>> b52acdd4d9790bd512f0a14719d26f1a4f0bdab3
     }else{
       toggleModalAuth();
     }
   }
-<<<<<<< HEAD
    
 }
 
@@ -362,16 +312,8 @@ function changeCount(event){
      renderCart();
   }
   saveCart();
-=======
- 
-  
->>>>>>> b52acdd4d9790bd512f0a14719d26f1a4f0bdab3
 }
-cartButton.addEventListener("click", toggleModal);
 
-close.addEventListener("click", toggleModal);
-
-<<<<<<< HEAD
 function init () {
   getData('./db/partners.json').then(function (data) {
     data.forEach(createCardRestaurant)
@@ -415,29 +357,3 @@ function init () {
   };
   
 init();
-=======
-cardsRestaurants.addEventListener('click', openGoods);
-
-logo.addEventListener('click', returnMain);
-
-// logo.addEventListener('click', function(){
-  //  containerPromo.classList.remove('hide');
-    // restaurants.classList.remove('hide');
-    // menu.classList.add('hide');
-// })
-
-checkAuth();
-
-
-createCardRestaurant();
-createCardRestaurant();
-createCardRestaurant(); 
-
-new Swiper('.swiper-container', {
-  loop:true,
-  autoplay:true,
-  // speed: 10000,
- 
-   
-});
->>>>>>> b52acdd4d9790bd512f0a14719d26f1a4f0bdab3
